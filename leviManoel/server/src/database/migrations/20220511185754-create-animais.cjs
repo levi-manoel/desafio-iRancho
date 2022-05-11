@@ -4,9 +4,9 @@ module.exports = {
   up: async (queryInterface, DataTypes) => {
       await queryInterface.createTable('animais', { 
       id:{
-        autoIncrement:true,
-        primaryKey:true,
-        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
       },
       fk_id_pessoa:{
         references:{
@@ -15,12 +15,12 @@ module.exports = {
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
-        allowNull:false,
-        type:DataTypes.BIGINT,
+        allowNull: false,
+        type: DataTypes.INTEGER,
       },
       id_fazenda:{
-        allowNull:false,
-        type: DataTypes.BIGINT,
+        allowNull: false,
+        type: DataTypes.INTEGER,
       },
       no_animal:{
         allowNull:false,
@@ -28,15 +28,15 @@ module.exports = {
         type: DataTypes.STRING,
       },
       no_raca:{
-        allowNull:false,
+        allowNull: false,
         type: DataTypes.STRING,
       },
       sexo:{
-        allowNull:false,
+        allowNull: false,
         type: DataTypes.ENUM('M','F'),
       },
       vr_peso:{
-        allowNull:false,
+        allowNull: false,
         type: DataTypes.FLOAT,
       },
       dt_nascimento:{

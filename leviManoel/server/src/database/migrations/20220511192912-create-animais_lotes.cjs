@@ -4,12 +4,12 @@ module.exports = {
   up: async(queryInterface, DataTypes)=> {
     await queryInterface.createTable('animais_lotes', {
       id:{
-        type: DataTypes.BIGINT,
+        type: DataTypes.INTEGER,
         autoIncrement:true,
         primaryKey:true,
       },
       fk_id_animal:{
-        type: DataTypes.BIGINT,
+        type: DataTypes.INTEGER,
         references:{
           model:{
             tableName:'animais',
@@ -21,7 +21,7 @@ module.exports = {
         onUpdate:'CASCADE'
       },
       fk_id_lote:{
-        type: DataTypes.BIGINT,
+        type: DataTypes.INTEGER,
         references:{
           model:{
             tableName:'lotes'
@@ -30,7 +30,7 @@ module.exports = {
         },
         allowNull:false,
         onDelete:'CASCADE',
-        onUpdate:'CASCADE'
+        onUpdate:'CASCADE',
       },
       dt_entrada: {
         type: DataTypes.DATEONLY,

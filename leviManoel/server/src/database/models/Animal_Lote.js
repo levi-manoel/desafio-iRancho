@@ -5,13 +5,12 @@ export class AnimalLote extends Model{};
 
 AnimalLote.init({
   id:{
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     autoIncrement:true,
     primaryKey:true,
   },
-
   fk_id_animal:{
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     references:{
       model:{
         tableName:'animais',
@@ -20,9 +19,8 @@ AnimalLote.init({
     },
     allowNull:false,
   },
-
   fk_id_lote:{
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     references:{
       model:{
         tableName:'lotes'
@@ -31,17 +29,14 @@ AnimalLote.init({
     },
     allowNull:false,
   },
-
   dt_entrada: {
     type: DataTypes.DATEONLY,
     allowNull:false,
   },
-
   dt_saida: {
     type: DataTypes.DATEONLY,
     allowNull:false,
   },
-
   dt_ultima_movimentacao: {
     type: DataTypes.DATEONLY,
     allowNull:false,

@@ -4,9 +4,10 @@ module.exports = {
   up: async (queryInterface, DataTypes) => {
       await queryInterface.createTable('lotes', { 
       id:{
-        autoIncrement:true,
-        primaryKey:true,
-        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        primaryKey: true,
+        allowNull: false,
+        type: DataTypes.INTEGER,
       },
       no_lote: {
         type: DataTypes.STRING,

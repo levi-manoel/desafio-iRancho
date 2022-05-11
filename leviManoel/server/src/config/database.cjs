@@ -1,7 +1,8 @@
 module.exports = {
   username: 'root',
-  password: '',
+  password: '123456',
   database: 'desafio_iRancho',
-  host: '127.0.0.1',
+  host: 'localhost',
+  port: '3002',
   dialect: 'mysql',
 }

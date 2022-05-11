@@ -18,12 +18,12 @@ export class Animal extends Model {
 
 Animal.init({
   id: {
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
   fk_id_pessoa: {
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     references: {
       model: {
         tableName: 'pessoas',
@@ -32,7 +32,7 @@ Animal.init({
     }
   },
   id_fazenda: {
-    type: DataTypes.BIGINT,
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
   no_animal: {
