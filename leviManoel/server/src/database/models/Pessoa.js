@@ -36,6 +36,6 @@ Pessoa.init({
 },{
   sequelize,
   modelName:'Pessoa',
-  tableName:'Pessoas',
+  tableName:'pessoas',
   timestamps:false,
 });
