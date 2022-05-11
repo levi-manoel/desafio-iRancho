@@ -1,4 +1,4 @@
-import { Sequelize, DataTypes, Model, BIGINT } from "sequelize";
+import { Sequelize, DataTypes, Model } from "sequelize";
 const options = require("./../../config/database.js");
 const sequelize = new Sequelize(options);
 
