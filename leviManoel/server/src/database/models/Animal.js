@@ -1,6 +1,5 @@
-import { Sequelize, DataTypes, Model } from "sequelize";
-const options = require("./../../config/database.js");
-const sequelize = new Sequelize(options);
+import { DataTypes, Model } from 'sequelize';
+import sequelizeModelOptions from '../../config/sequelizeModelOptions.js';
 
 export class Animal extends Model {
   static associate(models){
@@ -57,7 +56,7 @@ Animal.init({
     allowNull: false,
   },
 }, {
-  sequelize,
+  sequelizeModelOptions,
   timestamps: false,
   tableName: 'animais',
   modelName: 'Animal',
