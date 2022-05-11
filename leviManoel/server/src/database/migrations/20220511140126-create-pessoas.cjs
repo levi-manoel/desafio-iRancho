@@ -28,7 +28,7 @@ module.exports = {
       },
       ic_ativo: {
         allowNull: false,
-        type: DataTypes.DATE,
+        type: DataTypes.BOOLEAN,
       },
     });
   },
