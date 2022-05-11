@@ -11,7 +11,8 @@ export class Animal extends Model {
     });
 
     Animal.belongsToMany(models.Lote, {
-      through: 'animais_lote',
+      through: 'animais_lotes',
+      foreignKey: 'fk_id_animal'
     });
   }
 };
