@@ -8,9 +8,9 @@ async function getAll(_res, res) {
 
 async function getById(req, res) {
   const { id } = req.params;
-  const pessoa = await pessoasServices.getById(id);
+  const { code, response } = await pessoasServices.getById(id);
 
-  res.status(200).json(pessoa);
+  res.status(code).json(response);
 }
 
 export default {
