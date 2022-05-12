@@ -3,6 +3,8 @@ import pessoasControllers from '../controllers/pessoas.controllers.js';
 
 const router = Router();
 
-router.get('/', pessoasControllers.getAll);
+router
+  .get('/', pessoasControllers.getAll)
+  .get('/:id', pessoasControllers.getById);
 
 export default router;
