@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
-import sequelizeModelOptions from '../../config/sequelizeModelOptions.js';
+
+import sequelize from '../../config/sequelizeInstance.js';
 
 export class AnimalLote extends Model{};
 
@@ -46,7 +47,7 @@ AnimalLote.init({
     allowNull:false,
   }
 },{
-  sequelizeModelOptions,
+  sequelize,
   timestamps:false,
   tableName:'animais_lotes',
   modelName:'AnimalLote',

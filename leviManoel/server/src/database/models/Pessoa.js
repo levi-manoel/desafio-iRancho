@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
-import sequelizeModelOptions from '../../config/sequelizeModelOptions.js';
+
+import sequelize from '../../config/sequelizeInstance.js';
 
 export class Pessoa extends Model {
   static associate(models){
@@ -33,7 +34,7 @@ Pessoa.init({
     type:DataTypes.BOOLEAN
   },
 },{
-  sequelizeModelOptions,
+  sequelize,
   modelName:'Pessoa',
   tableName:'pessoas',
   timestamps:false,

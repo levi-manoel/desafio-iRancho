@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
-import sequelizeModelOptions from '../../config/sequelizeModelOptions.js';
+
+import sequelize from '../../config/sequelizeInstance.js';
 
 export class Lote extends Model {
   static associate(models){
@@ -25,7 +26,7 @@ Lote.init({
     allowNull: true,
   },
 }, {
-  sequelizeModelOptions,
+  sequelize,
   timestamps: false,
   tableName: 'lotes',
   modelName: 'Lote',
