@@ -1,12 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
 
 import sequelize from '../../config/sequelizeInstance.js';
+import { Animal } from './Animal.js';
 
-export class Pessoa extends Model {
-  static associate(models){
-    Pessoa.hasMany(models.Animal);
-  }
-};
+export class Pessoa extends Model {};
 
 Pessoa.init({
   id:{
@@ -39,3 +36,13 @@ Pessoa.init({
   tableName:'pessoas',
   timestamps:false,
 });
+
+Pessoa.hasMany(Animal, {
+  foreignKey: 'fk_id_pessoa',
+  as: 'dono'
+})
+
+Animal.belongsTo(Pessoa, {
+  foreignKey: 'fk_id_pessoa',
+  as: 'dono'
+})

@@ -1,21 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
 
 import sequelize from '../../config/sequelizeInstance.js';
+import { Pessoa } from './Pessoa.js';
 
-export class Animal extends Model {
-  static associate(models){
-    Animal.belongsTo(models.Pessoa, {
-      foreignKey: 'fk_id_pessoa',
-      onUpdate: 'CASCADE',
-      onDelete: 'CASCADE'
-    });
-
-    Animal.belongsToMany(models.Lote, {
-      through: 'animais_lotes',
-      foreignKey: 'fk_id_animal'
-    });
-  }
-};
+export class Animal extends Model {};
 
 Animal.init({
   id: {

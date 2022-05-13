@@ -2,14 +2,7 @@ import { DataTypes, Model } from 'sequelize';
 
 import sequelize from '../../config/sequelizeInstance.js';
 
-export class Lote extends Model {
-  static associate(models){
-    Lote.belongsToMany(models.Lote, {
-      through: 'animais_lotes',
-      foreignKey: 'fk_id_lote',
-    });
-  }
-};
+export class Lote extends Model {};
 
 Lote.init({
   id: {

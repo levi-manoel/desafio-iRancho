@@ -1,7 +1,10 @@
 import { Animal } from '../database/models/Animal.js';
+import { Pessoa } from '../database/models/Pessoa.js';
 
 async function getAll() {
-  const rows = await Animal.findAll();
+  const rows = await Animal.findAll({
+    include: [ { model: Pessoa, as: 'dono', attributes: [] } ]
+  });
 
   return { code: 200, response: rows };
 }
