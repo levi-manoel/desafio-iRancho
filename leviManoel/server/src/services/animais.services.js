@@ -3,7 +3,7 @@ import { Pessoa } from '../database/models/Pessoa.js';
 
 async function getAll() {
   const rows = await Animal.findAll({
-    include: [ { model: Pessoa, as: 'dono' } ],
+    include: { model: Pessoa, as: 'dono' },
     attributes: { exclude: [ 'fk_id_pessoa' ] }
   });
 
@@ -11,7 +11,10 @@ async function getAll() {
 }
 
 async function getById(id) {
-  const row = await Animal.findByPk(id);
+  const row = await Animal.findByPk(id, {
+    include: { model: Pessoa, as: 'dono'},
+    attributes: { exclude: [ 'fk_id_pessoa' ] }
+  });
 
   if (row === null) return { code: 404, response: { error: 'Não foi achado um animal com esse ID' } };
 
