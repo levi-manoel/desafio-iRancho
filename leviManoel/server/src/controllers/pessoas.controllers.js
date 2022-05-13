@@ -20,8 +20,18 @@ async function create(req, res) {
   res.status(code).json(response);
 }
 
+async function update(req, res) {
+  const updatedPerson = req.body;
+  const { id } = req.params;
+
+  const { code, response } = await pessoasServices.update(updatedPerson, id);
+
+  res.status(code).json(response);
+}
+
 export default {
   getAll,
   getById,
   create,
+  update,
 };

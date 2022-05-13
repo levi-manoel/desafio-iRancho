@@ -16,7 +16,7 @@ async function getById(id) {
 
 async function create(personOrPeople) {
   let result;
-  
+
   if (Array.isArray(personOrPeople)) {
     result = await Pessoa.bulkCreate(personOrPeople);
   } else {
@@ -26,8 +26,18 @@ async function create(personOrPeople) {
   return { code: 201, response: result };
 }
 
+async function update(person, id) {
+  const toUpdatePerson = await Pessoa.findByPk(id);
+  if (toUpdatePerson === null) return { code: 404, response: { error: 'Não foi achada nenhuma pessoa com esse ID' } };
+
+  await toUpdatePerson.update(person);
+
+  return { code: 200, response: { toUpdatePerson }};
+}
+
 export default {
   getAll,
   getById,
   create,
+  update,
 };

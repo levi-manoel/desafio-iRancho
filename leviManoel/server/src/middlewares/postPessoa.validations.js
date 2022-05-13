@@ -27,7 +27,7 @@ function validateGender(gender) {
 }
 
 function validateIcAtivo(icAtivo) {
-  if (!icAtivo) return { code: 400, response: { error: 'ic_ativo não pode ser vazio' }};
+  if (!icAtivo && icAtivo !== false) return { code: 400, response: { error: 'ic_ativo não pode ser vazio' }};
   if (icAtivo !== true && icAtivo !== false) return { code: 400, response: { error: 'ic_ativo inválido' }};
 
   return true;
