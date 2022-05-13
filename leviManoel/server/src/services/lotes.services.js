@@ -20,8 +20,18 @@ async function create(lote) {
   return { code: 201, response: result };
 }
 
+async function update(lote, id) {
+  const toUpdateLote = await Lote.findByPk(id);
+  if (toUpdateLote === null) return { code: 404, response: { error: 'Não foi achado um lote com esse ID' } };
+
+  await toUpdateLote.update(lote);
+
+  return { code: 200, response: toUpdateLote };
+}
+
 export default {
   getAll,
   getById,
   create,
+  update,
 };

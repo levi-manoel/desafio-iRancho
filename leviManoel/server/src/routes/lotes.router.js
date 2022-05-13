@@ -7,6 +7,7 @@ const router = Router();
 router
   .get('/', lotesControllers.getAll)
   .get('/:id', lotesControllers.getById)
-  .post('/', postLoteValidations, lotesControllers.create);
+  .post('/', postLoteValidations, lotesControllers.create)
+  .put('/:id', postLoteValidations, lotesControllers.update);
 
 export default router;
