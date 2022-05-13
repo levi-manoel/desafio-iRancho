@@ -8,6 +8,7 @@ router
   .get('/', lotesControllers.getAll)
   .get('/:id', lotesControllers.getById)
   .post('/', postLoteValidations, lotesControllers.create)
-  .put('/:id', postLoteValidations, lotesControllers.update);
+  .put('/:id', postLoteValidations, lotesControllers.update)
+  .delete('/:id', lotesControllers.remove);
 
 export default router;

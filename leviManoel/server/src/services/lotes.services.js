@@ -29,9 +29,19 @@ async function update(lote, id) {
   return { code: 200, response: toUpdateLote };
 }
 
+async function remove(id) {
+  const toRemoveLote = await Lote.findByPk(id);
+  if (toRemoveLote === null) return { code: 404, response: { error: 'Não foi achado um lote com esse ID' } };
+
+  await toRemoveLote.destroy();
+
+  return { code: 200, response: toRemoveLote };
+}
+
 export default {
   getAll,
   getById,
   create,
   update,
+  remove,
 };
