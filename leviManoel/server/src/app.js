@@ -3,6 +3,7 @@ import cors from 'cors';
 
 import pessoasRouter from './routes/pessoas.router.js';
 import lotesRouter from './routes/lotes.router.js';
+import animaisRouter from './routes/animais.router.js';
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 app.use('/pessoas', pessoasRouter);
 app.use('/lotes', lotesRouter);
+app.use('/animais', animaisRouter);
 
 app.listen(3001, () => {
   console.log('app listening on port 3001');
