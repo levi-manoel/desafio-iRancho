@@ -2,23 +2,10 @@ import { DataTypes, Model } from 'sequelize';
 
 import sequelize from '../../config/sequelizeInstance.js';
 
-export class AnimalLote extends Model {
-  static associate(models) {
-    models.Animal.belongsToMany(models.Pessoa, {
-      as: 'animais',
-      through: AnimalLote,
-      foreignKey: 'fk_id_animal',
-      otherKey: 'fk_id_lote'
-    })
+import { Animal } from './Animal.js';
+import { Lote } from './Lote.js';
 
-    models.Lote.belongsToMany(models.Animal, {
-      as: 'lotes',
-      through: AnimalLote,
-      foreignKey: 'fk_id_lote',
-      otherKey: 'fk_id_animal'
-    })
-  }
-};
+export class AnimalLote extends Model {};
 
 AnimalLote.init({
   id:{
@@ -68,3 +55,17 @@ AnimalLote.init({
   tableName:'animais_lotes',
   modelName:'AnimalLote',
 });
+
+Animal.belongsToMany(Lote, {
+  as: 'animais',
+  through: AnimalLote,
+  foreignKey: 'fk_id_animal',
+  otherKey: 'fk_id_lote'
+});
+
+Lote.belongsToMany(Animal, {
+  as: 'lotes',
+  through: AnimalLote,
+  foreignKey: 'fk_id_lote',
+  otherKey: 'fk_id_animal'
+})
