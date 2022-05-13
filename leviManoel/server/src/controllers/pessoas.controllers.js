@@ -29,9 +29,18 @@ async function update(req, res) {
   res.status(code).json(response);
 }
 
+async function remove(req, res) {
+  const { id } = req.params;
+
+  const { code, response } = await pessoasServices.remove(id);
+
+  res.status(code).json(response);
+}
+
 export default {
   getAll,
   getById,
   create,
   update,
+  remove,
 };

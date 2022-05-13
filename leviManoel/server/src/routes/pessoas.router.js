@@ -9,6 +9,7 @@ router
   .get('/', pessoasControllers.getAll)
   .get('/:id', pessoasControllers.getById)
   .post('/', validatePostPessoa, pessoasControllers.create)
-  .post('/:id', validatePostPessoa, pessoasControllers.update);
+  .post('/:id', validatePostPessoa, pessoasControllers.update)
+  .delete('/:id', pessoasControllers.remove);
 
 export default router;

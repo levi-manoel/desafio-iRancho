@@ -35,9 +35,19 @@ async function update(person, id) {
   return { code: 200, response: { toUpdatePerson }};
 }
 
+async function remove(id) {
+  const toRemovePerson = await Pessoa.findByPk(id);
+  if (toRemovePerson === null) return { code: 404, response: { error: 'Não foi achada nenhuma pessoa com esse ID' } };
+
+  await toRemovePerson.destroy();
+
+  return { code: 200, response: toRemovePerson };
+}
+
 export default {
   getAll,
   getById,
   create,
   update,
+  remove,
 };
