@@ -13,7 +13,15 @@ async function getById(req, res) {
   res.status(code).json(response);
 }
 
+async function create(req, res) {
+  const personOrPeople = req.body;
+  const { code, response } = await pessoasServices.create(personOrPeople);
+
+  res.status(code).json(response);
+}
+
 export default {
   getAll,
   getById,
+  create,
 };

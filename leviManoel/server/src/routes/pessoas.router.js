@@ -5,6 +5,7 @@ const router = Router();
 
 router
   .get('/', pessoasControllers.getAll)
-  .get('/:id', pessoasControllers.getById);
+  .get('/:id', pessoasControllers.getById)
+  .post('/', pessoasControllers.create);
 
 export default router;
