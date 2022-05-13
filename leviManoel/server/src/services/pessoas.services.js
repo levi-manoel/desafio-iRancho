@@ -32,7 +32,7 @@ async function update(person, id) {
 
   await toUpdatePerson.update(person);
 
-  return { code: 200, response: { toUpdatePerson }};
+  return { code: 200, response: toUpdatePerson };
 }
 
 async function remove(id) {
