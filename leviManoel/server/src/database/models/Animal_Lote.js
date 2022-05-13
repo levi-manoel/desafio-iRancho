@@ -2,7 +2,23 @@ import { DataTypes, Model } from 'sequelize';
 
 import sequelize from '../../config/sequelizeInstance.js';
 
-export class AnimalLote extends Model{};
+export class AnimalLote extends Model {
+  static associate(models) {
+    models.Animal.belongsToMany(models.Pessoa, {
+      as: 'animais',
+      through: AnimalLote,
+      foreignKey: 'fk_id_animal',
+      otherKey: 'fk_id_lote'
+    })
+
+    models.Lote.belongsToMany(models.Animal, {
+      as: 'lotes',
+      through: AnimalLote,
+      foreignKey: 'fk_id_lote',
+      otherKey: 'fk_id_animal'
+    })
+  }
+};
 
 AnimalLote.init({
   id:{

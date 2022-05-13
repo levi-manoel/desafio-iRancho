@@ -57,7 +57,7 @@ Animal.init({
     allowNull: false,
   },
 }, {
-  sequelizeInstance,
+  sequelize,
   timestamps: false,
   tableName: 'animais',
   modelName: 'Animal',
