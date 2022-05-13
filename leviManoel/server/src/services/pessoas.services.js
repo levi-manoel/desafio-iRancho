@@ -14,14 +14,8 @@ async function getById(id) {
   return { code: 200, response: row.dataValues };
 }
 
-async function create(personOrPeople) {
-  let result;
-
-  if (Array.isArray(personOrPeople)) {
-    result = await Pessoa.bulkCreate(personOrPeople);
-  } else {
-    result = await Pessoa.create(personOrPeople);
-  }
+async function create(person) {
+  const result = await Pessoa.create(person);
 
   return { code: 201, response: result };
 }

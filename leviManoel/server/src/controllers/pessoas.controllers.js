@@ -14,8 +14,8 @@ async function getById(req, res) {
 }
 
 async function create(req, res) {
-  const personOrPeople = req.body;
-  const { code, response } = await pessoasServices.create(personOrPeople);
+  const person = req.body;
+  const { code, response } = await pessoasServices.create(person);
 
   res.status(code).json(response);
 }

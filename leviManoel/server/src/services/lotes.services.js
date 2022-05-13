@@ -14,7 +14,14 @@ async function getById(id) {
   return { code: 200, response: row.dataValues };
 }
 
+async function create(lote) {
+  const result = await Lote.create(lote);
+  
+  return { code: 201, response: result };
+}
+
 export default {
   getAll,
   getById,
+  create,
 };
