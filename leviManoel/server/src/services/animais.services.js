@@ -3,7 +3,8 @@ import { Pessoa } from '../database/models/Pessoa.js';
 
 async function getAll() {
   const rows = await Animal.findAll({
-    include: [ { model: Pessoa, as: 'dono', attributes: [] } ]
+    include: [ { model: Pessoa, as: 'dono' } ],
+    attributes: { exclude: [ 'fk_id_pessoa' ] }
   });
 
   return { code: 200, response: rows };
