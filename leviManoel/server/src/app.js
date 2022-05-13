@@ -13,3 +13,5 @@ app.use('/pessoas', pessoasRouter);
 app.listen(3001, () => {
   console.log('app listening on port 3001');
 });
+
+export default app;
