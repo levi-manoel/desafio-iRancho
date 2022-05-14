@@ -1,15 +1,29 @@
 <template>
   <main>
-    <h3>{{ pessoa.no_pessoa }}, {{ pessoa.sexo }}</h3>
-    <div>
-      <p><strong>Email:</strong> {{ pessoa.no_email }}</p>
-      <p><strong>Endereço:</strong> {{ pessoa.endereco }}</p>
-      <p><strong>Ativo:</strong> {{ pessoa.ic_ativo === true ? 'Sim' : 'Não' }}</p>
-    </div>
-    <div>
-      <button @click="remove">Deletar</button>
-      <router-link :to="link"><button>Editar</button></router-link>
-    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sexo</th>
+          <th scope="col">Email</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Ativo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>{{ pessoa.no_pessoa }}</td>
+          <td>{{ pessoa.sexo }}</td>
+          <td>{{ pessoa.no_email }}</td>
+          <td>{{ pessoa.endereco }}</td>
+          <td>{{ pessoa.ic_ativo }}</td>
+        </tr>
+      </tbody>
+    </table>
+      <button @click="remove" class="btn btn-primary btn-block">Deletar</button>
+      <router-link :to="link" class="btn btn-secondary btn-block"><button class="btn btn-secondary">Editar</button></router-link>
   </main>
 </template>
 

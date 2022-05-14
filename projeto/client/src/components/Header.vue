@@ -1,15 +1,15 @@
 <template>
-  <header>
-    <h1>Fazenda 3000</h1>
-    <h3>Gerenciamento</h3>
+  <header class="bg-dark p-5">
+    <h1 class="text-white">
+      Fazenda 3000
+      <small class="text-muted">Gerenciamento</small>
+    </h1>
 
-    <nav>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/pessoas">Pessoas</router-link></li>
-        <li><router-link to="/animais">Animais</router-link></li>
-        <li><router-link to="/lotes">Lotes</router-link></li>
-      </ul>
+    <nav class="nav">
+      <router-link class="nav-link" to="/">Home</router-link>
+      <router-link class="nav-link" to="/pessoas">Pessoas</router-link>
+      <router-link class="nav-link" to="/animais">Animais</router-link>
+      <router-link class="nav-link" to="/lotes">Lotes</router-link>
     </nav>
   </header>
 </template>

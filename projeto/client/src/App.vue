@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <Header />
-    <router-view/>
+    <router-view class="p-5 bg-white"/>
   </div>
 </template>
 
@@ -16,4 +16,9 @@ export default {
 <style lang="scss">
 @import './assets/styles/variables';
 @import './assets/styles/bootstrap';
+
+html, body {
+  background-image: url('https://images.pexels.com/photos/10635264/pexels-photo-10635264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+}
 </style>

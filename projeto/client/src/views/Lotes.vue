@@ -1,13 +1,21 @@
 <template>
   <main>
-    <ul>
-      <li v-bind:key="index" v-for="(lote, index) in lotes">
-        <div>
-          <h6>{{ lote.no_lote }}</h6>
-          <p>{{ lote.ds_lote }}</p>
-        </div>
-      </li>
-    </ul>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-bind:key="index" v-for="(lote, index) in lotes">
+          <th scope="row">{{ index + 1 }}</th>
+          <td>{{ lote.no_lote }}</td>
+          <td>{{ lote.ds_lote }}</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </template>
 

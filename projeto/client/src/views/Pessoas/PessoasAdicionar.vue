@@ -2,38 +2,41 @@
   <main>
     <h3>Adicionar pessoa</h3>
     <form>
-      <label for="name-input">
-        Nome:
-        <input type="text" name="name-input" placeholder="Nome" v-model="name" />
-      </label>
+      <div class="row">
+        <div class="col">
+          <label for="name-input">Nome:</label>
+          <input type="text" id="name-input" class="form-control" placeholder="Nome" v-model="name" />
+        </div>
+        <div class="col">
+          <label for="email-input">Email:</label>
+          <input type="email" id="email-input" class="form-control" placeholder="Email" v-model="email" />
+        </div>
+      </div>
 
-      <label for="email-input">
-        Email:
-        <input type="email" name="email-input" placeholder="Email" v-model="email" />
-      </label>
+      <div class="form-group mt-3">
+        <label for="adress-input">Endereço:</label>
+        <input type="text" id="adress-input" class="form-control" placeholder="Endereço" v-model="adress" />
+      </div>
 
-      Endereço:
-      <label for="adress-input">
-        <input type="text" name="adress-input" placeholder="Endereço" v-model="adress" />
-      </label>
+      <div class="row">
+        <div class="col">
+          <label for="gender-select">Sexo:</label>
+          <select id="gender-select" v-model="gender" class="form-control">
+            <option value="M">M</option>
+            <option value="F">F</option>
+          </select>
+        </div>
 
-      <label for="gender-select">
-        Sexo:
-        <select name="gender-select" v-model="gender">
-          <option value="M">M</option>
-          <option value="F">F</option>
-        </select>
-      </label>
+        <div class="col">
+          <label for="active-select">É ativo</label>
+          <select id="active-select" v-model="active" class="form-control">
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
+      </div>
 
-      <label for="active-select">
-        É ativo:
-        <select name="active-select" v-model="active">
-          <option value="true">Sim</option>
-          <option value="false">Não</option>
-        </select>
-      </label>
-
-      <button @click.prevent="addPerson">Adicionar pessoa</button>
+      <button class="btn btn-primary btn-lg btn-block mt-2" @click.prevent="addPerson">Adicionar pessoa</button>
     </form>
   </main>
 </template>

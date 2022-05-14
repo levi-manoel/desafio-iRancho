@@ -1,13 +1,21 @@
 <template>
   <main>
-    <ul>
-      <li v-bind:key="index" v-for="(animal, index) in animals">
-        <div>
-          <h6>{{ animal.no_animal }}</h6>
-          <p>Dono: {{ animal.dono.no_pessoa }}</p>
-        </div>
-      </li>
-    </ul>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Animal</th>
+          <th scope="col">Dono</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-bind:key="index" v-for="(animal, index) in animals">
+          <th scope="row">{{ index + 1 }}</th>
+          <td>{{ animal.no_animal }}</td>
+          <td>{{ animal.dono.no_pessoa }}</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 </template>
 
