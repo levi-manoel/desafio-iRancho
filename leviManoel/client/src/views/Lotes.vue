@@ -1,9 +1,11 @@
 <template>
   <main>
-    Lista de parceiros
     <ul>
       <li v-bind:key="index" v-for="(lote, index) in lotes">
-        {{lote.no_lote}}
+        <div>
+          <h6>{{ lote.no_lote }}</h6>
+          <p>{{ lote.ds_lote }}</p>
+        </div>
       </li>
     </ul>
   </main>

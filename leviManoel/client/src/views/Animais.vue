@@ -1,9 +1,11 @@
 <template>
   <main>
-    Lista de parceiros
     <ul>
       <li v-bind:key="index" v-for="(animal, index) in animals">
-        {{animal.no_animal}}
+        <div>
+          <h6>{{ animal.no_animal }}</h6>
+          <p>Dono: {{ animal.dono.no_pessoa }}</p>
+        </div>
       </li>
     </ul>
   </main>

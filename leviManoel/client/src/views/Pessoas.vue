@@ -1,9 +1,11 @@
 <template>
   <main>
-    Lista de parceiros
     <ul>
-      <li v-bind:key="index" v-for="(client, index) in clients">
-        {{client.no_pessoa}}
+      <li v-bind:key="index" v-for="(pessoa, index) in pessoas">
+        <div>
+          <h6>{{ pessoa.no_pessoa }}</h6>
+          <router-link :to="links[index]">Detalhes</router-link>
+        </div>
       </li>
     </ul>
   </main>
@@ -13,13 +15,18 @@
 export default {
   data () {
     return {
-      clients: []
+      pessoas: []
+    }
+  },
+  computed: {
+    links () {
+      return this.pessoas.map((pessoa) => `/pessoas/${pessoa.id}`)
     }
   },
   mounted () {
     this.axios.get('http://127.0.0.1:3001/pessoas')
       .then(response => {
-        this.clients = response.data
+        this.pessoas = response.data
       })
   }
 }
