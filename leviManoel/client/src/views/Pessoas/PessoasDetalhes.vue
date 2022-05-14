@@ -4,9 +4,11 @@
     <div>
       <p><strong>Email:</strong> {{ pessoa.no_email }}</p>
       <p><strong>Endereço:</strong> {{ pessoa.endereco }}</p>
+      <p><strong>Ativo:</strong> {{ pessoa.ic_ativo === true ? 'Sim' : 'Não' }}</p>
     </div>
     <div>
       <button @click="remove">Deletar</button>
+      <router-link :to="link"><button>Editar</button></router-link>
     </div>
   </main>
 </template>
@@ -16,6 +18,7 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
+      link: `/editar/pessoas/${this.$route.params.id}`,
       pessoa: {}
     }
   },

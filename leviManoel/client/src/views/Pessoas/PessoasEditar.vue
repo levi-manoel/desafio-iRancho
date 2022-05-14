@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h3>Adicionar pessoa</h3>
+    <h3>Editar {{ name }}</h3>
     <form>
       <label for="name-input">
         Nome:
@@ -33,7 +33,7 @@
         </select>
       </label>
 
-      <button @click.prevent="addPerson">Adicionar pessoa</button>
+      <button @click.prevent="addPerson">Editar pessoa</button>
     </form>
   </main>
 </template>
@@ -49,20 +49,30 @@ export default {
       active: 'true'
     }
   },
+  mounted () {
+    this.axios.get(`http://127.0.0.1:3001/pessoas/${this.$route.params.id}`)
+      .then(({ data }) => {
+        this.name = data.no_pessoa
+        this.email = data.no_email
+        this.adress = data.endereco
+        this.gender = data.sexo
+        this.active = data.ic_ativo === true ? 'true' : 'false'
+      })
+  },
   methods: {
     addPerson () {
       if (this.name === '' || this.email === '' || this.adress === '') {
         return alert('Preencha todos os campos')
       }
 
-      this.axios.post('http://127.0.0.1:3001/pessoas', {
+      this.axios.put(`http://127.0.0.1:3001/pessoas/${this.$route.params.id}`, {
         no_pessoa: this.name,
         no_email: this.email,
         endereco: this.adress,
         sexo: this.gender,
         ic_ativo: this.active === 'true'
       }).then(response => {
-        alert(`${response.data.no_pessoa} foi adicionad${response.data.sexo === 'M' ? 'o' : 'a'} ao banco de dados`)
+        alert(`${response.data.no_pessoa} foi editad${response.data.sexo === 'M' ? 'o' : 'a'} no banco de dados`)
       })
     }
   }
