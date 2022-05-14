@@ -1,5 +1,6 @@
 <template>
   <main>
+    <router-link to="/adicionar/pessoas">Adicionar pessoa</router-link>
     <ul>
       <li v-bind:key="index" v-for="(pessoa, index) in pessoas">
         <div>

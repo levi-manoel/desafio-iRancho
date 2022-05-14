@@ -3,7 +3,8 @@ import Router from 'vue-router'
 
 import Home from '../views/Home.vue'
 import Pessoas from '../views/Pessoas.vue'
-import PessoaDetalhes from '../views/PessoaDetalhes.vue'
+import PessoasDetalhes from '../views/Pessoas/PessoasDetalhes.vue'
+import PessoasAdicionar from '../views/Pessoas/PessoasAdicionar.vue'
 import Animais from '../views/Animais.vue'
 import Lotes from '../views/Lotes.vue'
 
@@ -22,9 +23,14 @@ export default new Router({
       component: Pessoas
     },
     {
+      path: '/adicionar/pessoas',
+      name: 'adicionar pessoas',
+      component: PessoasAdicionar
+    },
+    {
       path: '/pessoas/:id',
       name: 'pessoas detalhes',
-      component: PessoaDetalhes
+      component: PessoasDetalhes
     },
     {
       path: '/animais',
