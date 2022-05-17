@@ -37,14 +37,14 @@ export default {
     }
   },
   mounted () {
-    this.axios.get(`http://127.0.0.1:3001/pessoas/${this.id}`)
+    this.axios.get(`https://fazenda-3000-db.herokuapp.com/pessoas/${this.id}`)
       .then(response => {
         this.pessoa = response.data
       })
   },
   methods: {
     remove () {
-      this.axios.delete(`http://127.0.0.1:3001/pessoas/${this.id}`)
+      this.axios.delete(`https://fazenda-3000-db.herokuapp.com/pessoas/${this.id}`)
         .then(response => {
           alert(`${response.data.no_pessoa} foi deletad${response.data.sexo === 'M' ? 'o' : 'a'} do banco de dados`)
         })

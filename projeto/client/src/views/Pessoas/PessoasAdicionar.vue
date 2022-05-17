@@ -58,7 +58,7 @@ export default {
         return alert('Preencha todos os campos')
       }
 
-      this.axios.post('http://127.0.0.1:3001/pessoas', {
+      this.axios.post('https://fazenda-3000-db.herokuapp.com/pessoas', {
         no_pessoa: this.name,
         no_email: this.email,
         endereco: this.adress,

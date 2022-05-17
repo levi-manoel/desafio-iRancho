@@ -32,7 +32,7 @@ export default {
     }
   },
   mounted () {
-    this.axios.get('http://127.0.0.1:3001/pessoas')
+    this.axios.get('https://fazenda-3000-db.herokuapp.com/pessoas')
       .then(response => {
         this.pessoas = response.data
       })

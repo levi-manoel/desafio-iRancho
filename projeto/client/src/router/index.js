@@ -2,12 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '../views/Home.vue'
+
 import Pessoas from '../views/Pessoas.vue'
 import PessoasDetalhes from '../views/Pessoas/PessoasDetalhes.vue'
 import PessoasAdicionar from '../views/Pessoas/PessoasAdicionar.vue'
 import PessoasEditar from '../views/Pessoas/PessoasEditar.vue'
+
 import Animais from '../views/Animais.vue'
+
 import Lotes from '../views/Lotes.vue'
+import LotesDetalhes from '../views/Lotes/LotesDetalhes.vue'
 
 Vue.use(Router)
 
@@ -47,6 +51,11 @@ export default new Router({
       path: '/lotes',
       name: 'lotes',
       component: Lotes
+    },
+    {
+      path: '/lotes/:id',
+      name: 'lotes detalhes',
+      component: LotesDetalhes
     }
   ]
 })
