@@ -64,8 +64,8 @@ Animal.belongsToMany(Lote, {
 });
 
 Lote.belongsToMany(Animal, {
-  as: 'lotes',
+  as: 'animais',
   through: AnimalLote,
   foreignKey: 'fk_id_lote',
   otherKey: 'fk_id_animal'
-})
+});
