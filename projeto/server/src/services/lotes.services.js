@@ -1,5 +1,6 @@
 import { Animal } from '../database/models/Animal.js';
 import { Lote } from '../database/models/Lote.js';
+import { AnimalLote } from '../database/models/Animal_Lote.js';
 
 async function getAll() {
   const rows = await Lote.findAll({
