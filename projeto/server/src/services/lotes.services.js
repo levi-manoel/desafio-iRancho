@@ -13,7 +13,11 @@ async function getAll() {
 }
 
 async function getById(id) {
-  const row = await Lote.findByPk(id);
+  const row = await Lote.findByPk(id, {
+    include: {
+      model: Animal, as: 'animais',
+    }
+  });
 
   if (row === null) return { code: 404, response: { error: 'Não foi achado um lote com esse ID' } };
 
