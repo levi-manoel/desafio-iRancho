@@ -13,6 +13,8 @@ module.exports = {
           model:'pessoas',
           key:'id',
         },
+        onDelete:'CASCADE',
+        onUpdate:'CASCADE',
         allowNull: false,
         type: DataTypes.INTEGER,
       },

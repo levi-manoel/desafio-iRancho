@@ -1,7 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 
 import sequelize from '../../config/sequelizeInstance.js';
-import { Pessoa } from './Pessoa.js';
 
 export class Animal extends Model {};
 

@@ -1,7 +1,12 @@
+import { Animal } from '../database/models/Animal.js';
 import { Lote } from '../database/models/Lote.js';
 
 async function getAll() {
-  const rows = await Lote.findAll();
+  const rows = await Lote.findAll({
+    include: {
+      model: Animal, as: 'animais',
+    }
+  });
 
   return { code: 200, response: rows };
 }
