@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted () {
-    this.axios.get(`https://fazenda-3000-db.herokuapp.com/${this.id}`)
+    this.axios.get(`https://fazenda-3000-db.herokuapp.com/lotes/${this.id}`)
       .then(response => {
         this.lote = response.data
       })
